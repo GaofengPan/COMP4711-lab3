@@ -31,13 +31,13 @@ class Student {
         return $total / count($this->grades);  
     }
     function toString() { 
-        $result = $this->first_name . ' ' . $this->surname. ' ';
-        $result .= ' ('.$this->average().")\n";
+        $result = '<table border="1"><tr><td style="background-color:#ccc"><strong>'.$this->first_name . ' ' . $this->surname. ' ';
+        $result .= ' ('.$this->average().")</strong></td>\n";
         foreach($this->status as $which=>$what)
-            $result .= $which . ': '. $what. "\n";  
+            $result .='<tr><td>'. $which . ': '. $what. "\n</td></tr>";
         foreach($this->emails as $which=>$what) 
-            $result .= $which . ': '. $what. "\n";
-            $result .= "\n";
+            $result .= '<tr><td>'.$which . ': '. $what. "\n</td></tr>";
+            $result .= "\n</tr></table>";
         return '<pre>'.$result.'</pre>'; 
         
     } 
