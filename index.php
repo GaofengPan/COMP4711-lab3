@@ -8,9 +8,18 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>index</title>
+        <style>
+            body{
+                font-size: 20px;
+            };
+            strong{
+                font-size: 30px;
+            }
+        </style>
     </head>
     <body>
-        <?php
+        <h2>Student Info</h2>
+    <?php
         include 'Student.php';
         $students = array();
         ##first Student
@@ -57,9 +66,8 @@ and open the template in the editor.
         $fourth->add_grade(70); 
         $students['g486'] = $fourth;
         ksort($students); // one of the many sort functions
-        foreach($students as $student) 
+            foreach($students as $student) 
             echo $student->toString(); 
-        
-        ?>      
+        ?>         
     </body>
 </html>
